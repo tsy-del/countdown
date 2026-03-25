@@ -1,21 +1,21 @@
-let timerInterval;
+function updateCountdown() {
+    const targetDate = new Date('2026-03-31T23:59:59');
+    const now = new Date();
+    const diff = targetDate - now;
 
-function startCountdown() {
-    clearInterval(timerInterval);
-    const minutes = document.getElementById('minutes').value;
-    let totalSeconds = minutes * 60;
-    const timerDisplay = document.getElementById('timer');
+    if (diff <= 0) {
+        document.getElementById('timer').innerHTML = "時間到！";
+        return;
+    }
 
-    timerInterval = setInterval(() => {
-        if (totalSeconds <= 0) {
-            clearInterval(timerInterval);
-            timerDisplay.innerHTML = "00:00:00";
-            return;
-        }
-        totalSeconds--;
-        const h = Math.floor(totalSeconds / 3600).toString().padStart(2, '0');
-        const m = Math.floor((totalSeconds % 3600) / 60).toString().padStart(2, '0');
-        const s = (totalSeconds % 60).toString().padStart(2, '0');
-        timerDisplay.innerHTML = `${h}:${m}:${s}`;
-    }, 1000);
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById('timer').innerHTML = 
+        `${days}天 ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
