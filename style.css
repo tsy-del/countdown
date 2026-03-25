@@ -20,7 +20,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* 改為從上方開始 */
-    padding-top: 420px;         /* 再向下推，讓文字落在板子上 */
+    padding-top: 500px;         /* 再向下推，讓文字落在板子上 */
     align-items: center;
 }
 h1 {
