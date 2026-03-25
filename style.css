@@ -1,5 +1,38 @@
-body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background: #f0f0f0; }
-.container { text-align: center; background: white; padding: 2rem; border-radius: 10px; shadow: 0 4px 6px rgba(0,0,0,0.1); }
-#timer { font-size: 3rem; margin: 1rem 0; }
-input { padding: 0.5rem; width: 80px; }
-button { padding: 0.5rem 1rem; cursor: pointer; }
+body { 
+    font-family: sans-serif; 
+    margin: 0;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    background-color: #333;
+}
+.container { 
+    text-align: center; 
+    position: relative;
+    background-image: url('bg.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    max-width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    background: rgba(255,255,255,0.7);
+    padding: 10px;
+    border-radius: 5px;
+}
+#timer { 
+    font-size: 3rem; 
+    margin: 1rem 0; 
+    background: rgba(255,255,255,0.8);
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #000;
+}
